@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'uk.gov.hmcts.java' version '0.12.0'
     id 'com.jfrog.bintray' version '1.8.4'
+    id "io.freefair.lombok" version "5.1.1"
     id 'com.github.ben-manes.versions' version '0.20.0'
     id 'java-library'
     id 'maven'
@@ -104,11 +105,6 @@ bintray {
             name = project.version
         }
     }
-}
-
-
-ext {
-    lombokVersion = '1.16.18'
 }
 
 def versions = [
