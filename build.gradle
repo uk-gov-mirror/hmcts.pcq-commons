@@ -72,6 +72,12 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+task unit(type: Test, description: 'Runs the unit tests.', group: 'Verification') {
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    useJUnitPlatform()
+}
+
 artifacts {
     archives sourcesJar
     archives javadocJar
@@ -135,7 +141,7 @@ wrapper {
 }
 
 test {
-    useJUnit()
+    useJUnitPlatform()
     testLogging {
         events "skipped", "failed"
     }
