@@ -37,6 +37,12 @@ To run all checks (including unit tests) please execute the following command:
     ./gradlew check
 ```
 
+To just run the unit tests, please execute the following command:
+
+```bash
+    ./gradlew unit
+```
+
 To push the changes to your local repository execute the following command.
 
 ```bash
@@ -73,7 +79,7 @@ Follow the steps below to tag a branch once the code review has completed.
 - Ensure build is successful: 
     - ./gradew clean build
 - Create the tag in git with the new version and JIRA reference.
-    - git tag -a 1.0.PCQ-1234-UpdateReadme -m "Update to README.md file."
+    - git tag -a 1.0.0.PCQ-1234-UpdateReadme -m "Update to README.md file."
 - Push the new tag to the git remote server.
     - git push origin 1.0.0_PCQ-1234-UpdateReadme
 
