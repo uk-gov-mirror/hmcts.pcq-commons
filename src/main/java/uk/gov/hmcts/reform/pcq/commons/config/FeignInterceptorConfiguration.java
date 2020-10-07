@@ -12,7 +12,6 @@ import java.util.Locale;
 
 
 @Slf4j
-@SuppressWarnings("PMD.ConfusingTernary")
 public class FeignInterceptorConfiguration {
 
     @Bean

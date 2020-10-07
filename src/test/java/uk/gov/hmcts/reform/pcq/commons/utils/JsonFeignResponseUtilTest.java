@@ -33,6 +33,35 @@ public class JsonFeignResponseUtilTest {
 
     private static final String ENCODING_STR = "content-encoding";
 
+    private static final String JSON_RESPONSE_STRING = "{"
+            + "    \"pcqRecord\": ["
+            + "        {"
+            + "            \"pcqAnswers\": null,"
+            + "            \"pcqId\": \"d1bc52bc-b673-46d3-a0d8-052ef678772e\","
+            + "            \"ccdCaseId\": null,"
+            + "            \"partyId\": null,"
+            + "            \"channel\": null,"
+            + "            \"completedDate\": null,"
+            + "            \"serviceId\": \"PROBATE_TEST\","
+            + "            \"actor\": \"DEFENDANT\","
+            + "            \"versionNo\": null"
+            + "        },"
+            + "        {"
+            + "            \"pcqAnswers\": null,"
+            + "            \"pcqId\": \"27f29282-6ff5-4a06-9277-fea8058a07a9\","
+            + "            \"ccdCaseId\": null,"
+            + "            \"partyId\": null,"
+            + "            \"channel\": null,"
+            + "            \"completedDate\": null,"
+            + "            \"serviceId\": \"PROBATE_TEST\","
+            + "            \"actor\": \"DEFENDANT\","
+            + "            \"versionNo\": null"
+            + "        }"
+            + "    ],"
+            + "    \"responseStatus\": \"Success\","
+            + "    \"responseStatusCode\": \"200\""
+            + "}";
+
     @Test
     @SuppressWarnings("unchecked")
     public void testDecode() {
@@ -41,34 +70,7 @@ public class JsonFeignResponseUtilTest {
         header.put(ENCODING_STR, list);
 
         Response response = Response.builder().status(200).reason("OK").headers(header).body(
-                "{"
-                        + "    \"pcqRecord\": ["
-                        + "        {"
-                        + "            \"pcqAnswers\": null,"
-                        + "            \"pcqId\": \"d1bc52bc-b673-46d3-a0d8-052ef678772e\","
-                        + "            \"ccdCaseId\": null,"
-                        + "            \"partyId\": null,"
-                        + "            \"channel\": null,"
-                        + "            \"completedDate\": null,"
-                        + "            \"serviceId\": \"PROBATE_TEST\","
-                        + "            \"actor\": \"DEFENDANT\","
-                        + "            \"versionNo\": null"
-                        + "        },"
-                        + "        {"
-                        + "            \"pcqAnswers\": null,"
-                        + "            \"pcqId\": \"27f29282-6ff5-4a06-9277-fea8058a07a9\","
-                        + "            \"ccdCaseId\": null,"
-                        + "            \"partyId\": null,"
-                        + "            \"channel\": null,"
-                        + "            \"completedDate\": null,"
-                        + "            \"serviceId\": \"PROBATE_TEST\","
-                        + "            \"actor\": \"DEFENDANT\","
-                        + "            \"versionNo\": null"
-                        + "        }"
-                        + "    ],"
-                        + "    \"responseStatus\": \"Success\","
-                        + "    \"responseStatusCode\": \"200\""
-                        + "}", UTF_8).request(mock(Request.class)).build();
+                JSON_RESPONSE_STRING, UTF_8).request(mock(Request.class)).build();
         Optional<Object> pcqRecordWithoutCaseResponseOptional = Optional.empty();
         try {
             pcqRecordWithoutCaseResponseOptional = JsonFeignResponseUtil.decode(response,
@@ -142,34 +144,7 @@ public class JsonFeignResponseUtilTest {
         header.put(ENCODING_STR, list);
 
         Response response = Response.builder().status(200).reason("OK").headers(header).body(
-                "{"
-                        + "    \"pcqRecord\": ["
-                        + "        {"
-                        + "            \"pcqAnswers\": null,"
-                        + "            \"pcqId\": \"d1bc52bc-b673-46d3-a0d8-052ef678772e\","
-                        + "            \"ccdCaseId\": null,"
-                        + "            \"partyId\": null,"
-                        + "            \"channel\": null,"
-                        + "            \"completedDate\": null,"
-                        + "            \"serviceId\": \"PROBATE_TEST\","
-                        + "            \"actor\": \"DEFENDANT\","
-                        + "            \"versionNo\": null"
-                        + "        },"
-                        + "        {"
-                        + "            \"pcqAnswers\": null,"
-                        + "            \"pcqId\": \"27f29282-6ff5-4a06-9277-fea8058a07a9\","
-                        + "            \"ccdCaseId\": null,"
-                        + "            \"partyId\": null,"
-                        + "            \"channel\": null,"
-                        + "            \"completedDate\": null,"
-                        + "            \"serviceId\": \"PROBATE_TEST\","
-                        + "            \"actor\": \"DEFENDANT\","
-                        + "            \"versionNo\": null"
-                        + "        }"
-                        + "    ],"
-                        + "    \"responseStatus\": \"Success\","
-                        + "    \"responseStatusCode\": \"200\""
-                        + "}", UTF_8).request(mock(Request.class)).build();
+                JSON_RESPONSE_STRING, UTF_8).request(mock(Request.class)).build();
         ResponseEntity entity = null;
         try {
             entity = JsonFeignResponseUtil.toResponseEntity(response, PcqRecordWithoutCaseResponse.class);
@@ -193,7 +168,7 @@ public class JsonFeignResponseUtilTest {
     @Test
     public void privateConstructorTest() throws Exception {
         Constructor<JsonFeignResponseUtil> constructor = JsonFeignResponseUtil.class.getDeclaredConstructor();
-        assertFalse("Constructor is not accessible", constructor.isAccessible());
+        assertFalse("Constructor is not accessible", constructor.canAccess(null));
         constructor.setAccessible(true);
         constructor.newInstance((Object[]) null);
     }
