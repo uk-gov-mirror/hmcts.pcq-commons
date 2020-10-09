@@ -27,7 +27,7 @@ jobs:
         if: failure()
         with:
           name: test-artifacts
-          path: build/reports/tests/test/index.html
+          path: build/reports/tests/test/
           retention-days: 7
       - name: Release
         env:
