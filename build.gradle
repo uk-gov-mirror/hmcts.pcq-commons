@@ -129,12 +129,18 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-core', version: '5.2.9.RELEASE'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.1.RELEASE'
 
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+
     compile group: 'io.github.openfeign.form', name: 'feign-form', version: '3.8.0'
     compile group: 'io.github.openfeign.form', name: 'feign-form-spring', version: '3.8.0'
 
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.3'
 
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+    compile group: "com.gilecode.yagson", name:"j9-reflection-utils", version:"1.0"
+
+    implementation group: "io.jsonwebtoken", name: "jjwt", version: "0.9.1"
 
     testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.jupiter
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springBoot
@@ -146,6 +152,9 @@ dependencies {
     testRuntime("org.junit.jupiter:junit-jupiter-engine:5.3.2")
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.2')
     testImplementation('org.mockito:mockito-core:2.7.22')
+
+    testImplementation group: "com.gilecode.yagson", name:"j9-reflection-utils", version:"1.0"
+    testImplementation group: "io.jsonwebtoken", name: "jjwt", version: "0.9.1"
 
 
 }
@@ -159,6 +168,7 @@ test {
     testLogging {
         events "skipped", "failed"
     }
+    systemProperty "user.timezone", "UTC"
 }
 
 jar {
