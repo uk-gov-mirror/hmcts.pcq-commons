@@ -168,6 +168,7 @@ test {
     testLogging {
         events "skipped", "failed"
     }
+    systemProperty "user.timezone", "UTC"
 }
 
 jar {

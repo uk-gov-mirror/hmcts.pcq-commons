@@ -26,29 +26,22 @@ public class PcqUtilsTest {
 
     // Timestamp is Saturday, 23 May 2020 15:12:00 GMT
     private static final Long EPOCH_TIMESTAMP = 1590246720000L;
+    private static final String STRING_TIMESTAMP = "2020-05-23T15:12:00.000Z";
 
     private static final String DOB_VALIDATION_MSG = "Dob validation should not return true";
-
-    public static String getStringTimestamp() {
-        System.out.println(TimeZone.getDefault());
-        TimeZone london = TimeZone.getTimeZone("Europe/London");
-        int offsetMS = london.getOffset(System.currentTimeMillis());
-        // If DST is enabled
-        return offsetMS != 0 ? "2020-05-23T16:12:00.000Z" : "2020-05-23T15:12:00.000Z";
-    }
 
     @Test
     public void testConvertTimeStampToStringSuccess() {
         String stringConversion = PcqUtils.convertTimeStampToString(new Timestamp(EPOCH_TIMESTAMP));
 
-        assertEquals(getStringTimestamp(), stringConversion, "String conversion different.");
+        assertEquals(STRING_TIMESTAMP, stringConversion, "String conversion different.");
     }
 
     @Test
     public void testConvertDateToString() {
         String stringConversion = PcqUtils.convertDateToString(new Date(EPOCH_TIMESTAMP));
 
-        assertEquals(getStringTimestamp(), stringConversion, "String conversion different.");
+        assertEquals(STRING_TIMESTAMP, stringConversion, "String conversion different.");
     }
 
     @Test
@@ -68,14 +61,14 @@ public class PcqUtilsTest {
 
     @Test
     public void testGetTimeFromString() {
-        Timestamp timestampConversion = PcqUtils.getTimeFromString(getStringTimestamp());
+        Timestamp timestampConversion = PcqUtils.getTimeFromString(STRING_TIMESTAMP);
 
         assertEquals(EPOCH_TIMESTAMP, timestampConversion.getTime(), "Timestamp conversion different.");
     }
 
     @Test
     public void testGetDateFromString() {
-        Date dateConversion = PcqUtils.getDateFromString(getStringTimestamp());
+        Date dateConversion = PcqUtils.getDateFromString(STRING_TIMESTAMP);
 
         assertEquals("2020-05-23", dateConversion.toString(), "Date conversion different.");
     }
