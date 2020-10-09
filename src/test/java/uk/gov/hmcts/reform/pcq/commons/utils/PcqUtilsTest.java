@@ -30,6 +30,7 @@ public class PcqUtilsTest {
     private static final String DOB_VALIDATION_MSG = "Dob validation should not return true";
 
     public static String getStringTimestamp() {
+        System.out.println(TimeZone.getDefault());
         TimeZone london = TimeZone.getTimeZone("Europe/London");
         int offsetMS = london.getOffset(System.currentTimeMillis());
         // If DST is enabled
