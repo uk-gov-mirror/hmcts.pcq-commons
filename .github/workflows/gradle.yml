@@ -24,9 +24,11 @@ jobs:
         run: ./gradlew check
       - name: Archive test artifacts
         uses: actions/upload-artifact@v2
+        if: failure()
         with:
           name: test-artifacts
           path: build/reports/tests/test/index.html
+          retention-days: 7
       - name: Release
         env:
           BINTRAY_USER: jenkins-reform-hmcts
