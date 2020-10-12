@@ -157,10 +157,10 @@ public class PcqUtils {
         return StringUtils.defaultIfEmpty(strObject, null);
     }
 
-    public static String generateAuthorizationToken(String secretKey, String subject) {
+    public static String generateAuthorizationToken(String secretKey, String subject, String authoritiesStr) {
         List<String> authorities = new ArrayList<>();
         long currentTime = System.currentTimeMillis();
-        authorities.add("Pcq_Loader");
+        authorities.add(authoritiesStr);
 
         return Jwts.builder()
                 .setSubject(subject)
