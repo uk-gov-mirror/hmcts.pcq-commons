@@ -13,6 +13,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used by the components in their test framework.
+ */
 public class TestUtils {
 
     private static final String CO_RELATION_ID_FOR_TEST = "Test-Id";
