@@ -249,7 +249,7 @@ public class PcqUtilsTest {
 
     @Test
     public void testAuthorisationToken() {
-        String token = PcqUtils.generateAuthorizationToken("Test", "TestSubject");
+        String token = PcqUtils.generateAuthorizationToken("Test", "TestSubject", "TestAuthority");
         assertNotNull(token, "Authorisation token is null");
     }
 
