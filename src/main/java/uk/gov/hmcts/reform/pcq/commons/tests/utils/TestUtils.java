@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.pcq.commons.utils;
+package uk.gov.hmcts.reform.pcq.commons.tests.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.io.ClassPathResource;
@@ -13,6 +13,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used by the components in their test framework.
+ */
 public class TestUtils {
 
     private static final String CO_RELATION_ID_FOR_TEST = "Test-Id";
