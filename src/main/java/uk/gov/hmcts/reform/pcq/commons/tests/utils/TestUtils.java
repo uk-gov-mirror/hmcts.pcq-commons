@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.pcq.commons.utils;
+package uk.gov.hmcts.reform.pcq.commons.tests.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.io.ClassPathResource;
