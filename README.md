@@ -1,9 +1,5 @@
 # pcq-commons
 
-<!--[![Build Status](https://travis-ci.org/hmcts/pcq-commons.svg?branch=master)](https://travis-ci.org/hmcts/pcq-commons) -->
-[![Download](https://api.bintray.com/packages/hmcts/hmcts-maven/pcq-commons/images/download.svg) ](https://bintray.com/hmcts/hmcts-maven/pcq-commons/_latestVersion)
-
-
 Repository of common code components for Protected Characteristics Question (PCQ) back-end applications.
 
 ## Getting started
@@ -77,7 +73,7 @@ If master is not tagged, a release will not be created and therefore will be una
 
 Follow the steps below to tag a branch once the code review has completed. 
 - Ensure build is successful: 
-    - ./gradew clean build
+    - ./gradlew clean build
 - Create the tag in git with the new version and JIRA reference.
     - git tag -a 1.0.0.PCQ-1234-UpdateReadme -m "Update to README.md file."
 - Push the new tag to the git remote server.
@@ -93,7 +89,7 @@ Once the JIRA has been merged follow the steps below to tag master.
     - git checkout master
     - git pull
 - Ensure build is successful: 
-    - ./gradew clean build
+    - ./gradlew clean build
 - Create the tag in git with the updated version:
     - git tag -a 1.0.1 -m "Update to README.md file."
 - Push the new tag to the git remote server.
