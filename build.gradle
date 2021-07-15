@@ -1,8 +1,8 @@
 
 plugins {
     id 'java'
+    id 'checkstyle'
     id 'uk.gov.hmcts.java' version '0.12.0'
-    id 'com.jfrog.bintray' version '1.8.4'
     id "io.freefair.lombok" version "5.1.1"
     id 'com.github.ben-manes.versions' version '0.20.0'
     id 'java-library'
@@ -34,6 +34,9 @@ compileTestJava {
 repositories {
     mavenLocal()
     jcenter()
+    maven {
+        url 'https://jitpack.io'
+    }
 }
 
 jar {
@@ -97,21 +100,11 @@ publishing {
     }
 }
 
-bintray {
-    user = System.getenv('BINTRAY_USER')
-    key = System.getenv('BINTRAY_KEY')
-    publications = ['Main']
-    publish = true
-    pkg {
-        repo = 'hmcts-maven'
-        name = 'pcq-commons'
-        userOrg = 'hmcts'
-        licenses = ['MIT']
-        vcsUrl = 'https://github.com/hmcts/pcq-commons'
-        version {
-            name = project.version
-        }
-    }
+checkstyle {
+    maxWarnings = 0
+    toolVersion = '8.29'
+    // need to set configDir to rootDir otherwise submodule will use submodule/config/checkstyle
+    configDir = new File(rootDir, 'config/checkstyle')
 }
 
 def versions = [
