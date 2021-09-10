@@ -111,7 +111,7 @@ public class PcqAnswers implements Serializable {
     @JsonProperty("pregnancy")
     private Integer pregnancy;
 
-    @JsonProperty("OPT_OUT")
+    @JsonProperty("opt_out")
     private Boolean optOut;
 
 }
