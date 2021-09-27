@@ -22,6 +22,7 @@ public class PcqAnswerRequestTest {
     private static final String DOB = "01-01-1999T00:00:00.000Z";
     private static final Integer ANSWER_RESPONSE_INT = 1;
     private static final String ANSWER_RESPONSE_TEXT = "Other Test";
+    private static final Boolean ANSWER_OPT_OUT = true;
 
     @Test
     void testPcqAnswerRequest() {
@@ -60,6 +61,7 @@ public class PcqAnswerRequestTest {
         pcqAnswers.setSexualityOther(ANSWER_RESPONSE_TEXT);
         pcqAnswers.setPregnancy(ANSWER_RESPONSE_INT);
         pcqAnswers.setMarriage(ANSWER_RESPONSE_INT);
+        pcqAnswers.setOptOut(ANSWER_OPT_OUT);
 
         pcqAnswerRequest.setPcqAnswers(pcqAnswers);
 
@@ -100,7 +102,7 @@ public class PcqAnswerRequestTest {
         assertEquals(ANSWER_RESPONSE_TEXT, answers.getSexualityOther(), "Sexuality Other is invalid");
         assertEquals(ANSWER_RESPONSE_INT, answers.getPregnancy(), "Pregnancy is invalid");
         assertEquals(ANSWER_RESPONSE_INT, answers.getMarriage(), "Marriage is invalid");
-
+        assertEquals(ANSWER_OPT_OUT, answers.getOptOut(), "OptOut is invalid");
     }
 
 }

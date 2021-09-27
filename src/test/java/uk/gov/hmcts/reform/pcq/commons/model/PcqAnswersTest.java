@@ -44,6 +44,7 @@ class PcqAnswersTest {
         answers.setSex(2);
         answers.setSexuality(4);
         answers.setSexualityOther("Other");
+        answers.setOptOut(false);
     }
 
     private void assertAnswers(PcqAnswers answers) {
@@ -107,5 +108,7 @@ class PcqAnswersTest {
                 answers.getSexuality().intValue());
         assertEquals("Sexuality Other is not matching", "Other",
                 answers.getSexualityOther());
+        assertEquals("OptOut is not matching", false,
+                answers.getOptOut());
     }
 }
