@@ -1,6 +1,20 @@
 # pcq-commons
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Java CI](https://github.com/hmcts/pcq-commons/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/hmcts/pcq-commons/actions/workflows/gradle.yml)
+
 Repository of common code components for Protected Characteristics Question (PCQ) back-end applications.
+
+## Overview
+
+<p align="center">
+<a href="https://github.com/hmcts/pcq-frontend">pcq-frontend</a> • <a href="https://github.com/hmcts/pcq-backend">pcq-backend</a> • <b><a href="https://github.com/hmcts/pcq-backend">pcq-commons</a></b> • <a href="https://github.com/hmcts/pcq-consolidation-service">pcq-consolidation-service</a> • <a href="https://github.com/hmcts/pcq-shared-infrastructure">pcq-shared-infrastructure</a> • <a href="https://github.com/hmcts/pcq-loader">pcq-loader</a>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hmcts/pcq-frontend/master/pcq_overview.png" width="500"/>
+</p>
 
 ## Getting started
 
