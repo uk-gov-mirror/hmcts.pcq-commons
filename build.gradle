@@ -3,8 +3,8 @@ plugins {
     id 'java'
     id 'checkstyle'
     id 'uk.gov.hmcts.java' version '0.12.0'
-    id "io.freefair.lombok" version "5.1.1"
-    id 'com.github.ben-manes.versions' version '0.20.0'
+    id "io.freefair.lombok" version "5.3.3.3"
+    id 'com.github.ben-manes.versions' version '0.44.0'
     id 'java-library'
     id 'maven'
     id 'maven-publish'
@@ -119,15 +119,15 @@ dependencies {
 
     compile group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
-    compile group: 'org.springframework', name: 'spring-core', version: '5.2.9.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version: '5.3.23'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.1.RELEASE'
 
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 
     compile group: 'io.github.openfeign.form', name: 'feign-form', version: '3.8.0'
     compile group: 'io.github.openfeign.form', name: 'feign-form-spring', version: '3.8.0'
 
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.3'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.4'
 
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
@@ -138,12 +138,12 @@ dependencies {
     testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.jupiter
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springBoot
 
-    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.3.1'
-    testCompile group: 'org.mockito', name: 'mockito-inline', version: '3.1.0'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
+    testCompile group: 'org.mockito', name: 'mockito-inline', version: '3.12.4'
 
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.3.2")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.3.2")
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.2')
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.9.1")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.9.1")
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.9.1')
     testImplementation('org.mockito:mockito-core:2.7.22')
 
     testImplementation group: "com.gilecode.yagson", name:"j9-reflection-utils", version:"1.0"
