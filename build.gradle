@@ -102,7 +102,7 @@ publishing {
 
 checkstyle {
     maxWarnings = 0
-    toolVersion = '8.29'
+    toolVersion = '10.5.0'
     // need to set configDir to rootDir otherwise submodule will use submodule/config/checkstyle
     configDir = new File(rootDir, 'config/checkstyle')
 }
@@ -111,7 +111,7 @@ def versions = [
         jupiter           : '5.9.1',
         lombok            : '1.18.24',
         springfoxSwagger  : '3.0.0',
-        springBoot        : '2.3.4.RELEASE'
+        springBoot        : '2.7.6'
 ]
 
 dependencies {
@@ -120,7 +120,7 @@ dependencies {
     compile group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
     compile group: 'org.springframework', name: 'spring-core', version: '5.3.24'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.7.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '4.0.0'
 
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 
