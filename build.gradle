@@ -108,7 +108,7 @@ def versions = [
         jupiter           : '5.9.1',
         lombok            : '1.18.24',
         springfoxSwagger  : '3.0.0',
-        springBoot        : '2.3.4.RELEASE'
+        springBoot        : '2.3.12.RELEASE'
 ]
 
 dependencies {
@@ -117,7 +117,7 @@ dependencies {
     implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
     implementation group: 'org.springframework', name: 'spring-core', version: '5.3.24'
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.7.RELEASE'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '3.1.5'
 
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 
