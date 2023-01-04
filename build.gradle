@@ -6,10 +6,7 @@ plugins {
     id "io.freefair.lombok" version "5.3.3.3"
     id 'com.github.ben-manes.versions' version '0.44.0'
     id 'java-library'
-    id 'maven'
     id 'maven-publish'
-    id 'net.ltgt.apt' version '0.21'
-    // id 'pmd'
     id 'jacoco'
 }
 
@@ -104,7 +101,7 @@ checkstyle {
     maxWarnings = 0
     toolVersion = '8.29'
     // need to set configDir to rootDir otherwise submodule will use submodule/config/checkstyle
-    configDir = new File(rootDir, 'config/checkstyle')
+    configDirectory = new File(rootDir, 'config/checkstyle')
 }
 
 def versions = [
@@ -115,34 +112,34 @@ def versions = [
 ]
 
 dependencies {
-    compile group: 'org.projectlombok', name: 'lombok', version: versions.lombok
+    implementation group: 'org.projectlombok', name: 'lombok', version: versions.lombok
 
-    compile group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
-    compile group: 'org.springframework', name: 'spring-core', version: '5.3.24'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.7.RELEASE'
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.24'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.7.RELEASE'
 
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 
-    compile group: 'io.github.openfeign.form', name: 'feign-form', version: '3.8.0'
-    compile group: 'io.github.openfeign.form', name: 'feign-form-spring', version: '3.8.0'
+    implementation group: 'io.github.openfeign.form', name: 'feign-form', version: '3.8.0'
+    implementation group: 'io.github.openfeign.form', name: 'feign-form-spring', version: '3.8.0'
 
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.1'
 
-    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
-    compile group: "com.gilecode.yagson", name:"j9-reflection-utils", version:"1.0"
+    implementation group: "com.gilecode.yagson", name:"j9-reflection-utils", version:"1.0"
 
     implementation group: "io.jsonwebtoken", name: "jjwt", version: "0.9.1"
 
-    testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.jupiter
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springBoot
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.jupiter
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springBoot
 
-    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
-    testCompile group: 'org.mockito', name: 'mockito-inline', version: '3.12.4'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
+    testImplementation group: 'org.mockito', name: 'mockito-inline', version: '3.12.4'
 
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.9.1")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.9.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.1")
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.9.1')
     testImplementation('org.mockito:mockito-core:2.28.2')
 
