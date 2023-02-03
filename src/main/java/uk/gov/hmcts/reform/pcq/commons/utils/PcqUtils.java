@@ -1,8 +1,6 @@
 package uk.gov.hmcts.reform.pcq.commons.utils;
 
 import lombok.extern.slf4j.Slf4j;
-import com.gilecode.reflection.ReflectionAccessUtils;
-import com.gilecode.reflection.ReflectionAccessor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.HtmlUtils;
@@ -11,7 +9,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import uk.gov.hmcts.reform.pcq.commons.model.SubmitResponse;
 
-import java.lang.reflect.Field;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -146,11 +143,6 @@ public class PcqUtils {
             returnField = "0" + returnField;
         }
         return returnField;
-    }
-
-    public static void makeFieldAccessible(Field field) {
-        ReflectionAccessor accessor = ReflectionAccessUtils.getReflectionAccessor();
-        accessor.makeAccessible(field);
     }
 
     public static String nullIfEmpty(String strObject) {
