@@ -112,7 +112,7 @@ checkstyle {
 }
 
 def versions = [
-        jupiter           : '5.9.1',
+        jupiter           : '5.9.2',
         lombok            : '1.18.26',
         springfoxSwagger  : '3.0.0',
         springBoot        : '2.3.12.RELEASE'
@@ -145,9 +145,9 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
     testImplementation group: 'org.mockito', name: 'mockito-inline', version: '3.12.4'
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.1")
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.9.1')
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.9.2')
     testImplementation('org.mockito:mockito-core:2.28.2')
 
     //testImplementation group: "com.gilecode.yagson", name:"j9-reflection-utils", version:"1.0"
