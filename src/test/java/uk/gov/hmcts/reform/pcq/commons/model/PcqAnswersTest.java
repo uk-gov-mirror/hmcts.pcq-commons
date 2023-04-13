@@ -2,7 +2,7 @@ package uk.gov.hmcts.reform.pcq.commons.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PcqAnswersTest {
 
@@ -48,67 +48,67 @@ class PcqAnswersTest {
     }
 
     private void assertAnswers(PcqAnswers answers) {
-        assertEquals("Other Disability Condition is not matching", "TEST_DIS_OTHER",
-                answers.getDisabilityConditionOther());
-        assertEquals("Disability Conditions is not matching", 1,
-                answers.getDisabilityConditions().intValue());
-        assertEquals("Disability Dexterity is not matching", 0,
-                answers.getDisabilityDexterity().intValue());
-        assertEquals("Disability Hearing is not matching", 2,
-                answers.getDisabilityHearing().intValue());
-        assertEquals("Disability Impact is not matching", 1,
-                answers.getDisabilityImpact().intValue());
-        assertEquals("Disability Learning is not matching", 2,
-                answers.getDisabilityLearning().intValue());
-        assertEquals("Disability Memory is not matching", 0,
-                answers.getDisabilityMemory().intValue());
-        assertEquals("Disability Mental Health is not matching", 3,
-                answers.getDisabilityMentalHealth().intValue());
-        assertEquals("Disability Mobility is not matching", 1,
-                answers.getDisabilityMobility().intValue());
-        assertEquals("Disability None is not matching", 2,
-                answers.getDisabilityNone().intValue());
-        assertEquals("Disability Other is not matching", 0,
-                answers.getDisabilityOther().intValue());
-        assertEquals("Disability Social is not matching", 2,
-                answers.getDisabilitySocial().intValue());
-        assertEquals("Disability Stamina is not matching", 1,
-                answers.getDisabilityStamina().intValue());
-        assertEquals("Disability Vision is not matching", 0,
-                answers.getDisabilityVision().intValue());
-        assertEquals("Dob is not matching", "01-01-1900",
-                answers.getDob());
-        assertEquals("Dob Provided is not matching", 1,
-                answers.getDobProvided().intValue());
-        assertEquals("English Language level is not matching", 1,
-                answers.getEnglishLanguageLevel().intValue());
-        assertEquals("Ethnicity is not matching", 2,
-                answers.getEthnicity().intValue());
-        assertEquals("Ethnicity Other is not matching", "OK",
-                answers.getEthnicityOther());
-        assertEquals("Gender Different is not matching", 2,
-                answers.getGenderDifferent().intValue());
-        assertEquals("Gender Other is not matching", "OtherG",
-                answers.getGenderOther());
-        assertEquals("Main Language is not matching", 1,
-                answers.getLanguageMain().intValue());
-        assertEquals("Language other is not matching", "Lang1",
-                answers.getLanguageOther());
-        assertEquals("Marriage is not matching", 1,
-                answers.getMarriage().intValue());
-        assertEquals("Pregnancy is not matching", 2,
-                answers.getPregnancy().intValue());
-        assertEquals("Religion is not matching", 1,
-                answers.getReligion().intValue());
-        assertEquals("Religion Other is not matching", "CDS",
-                answers.getReligionOther());
-        assertEquals("Sex is not matching", 2,
-                answers.getSex().intValue());
-        assertEquals("Sexuality is not matching", 4,
-                answers.getSexuality().intValue());
-        assertEquals("Sexuality Other is not matching", "Other",
-                answers.getSexualityOther());
-        assertEquals("OptOut is not matching", false,
-                answers.getOptOut());
+        assertEquals("TEST_DIS_OTHER", answers.getDisabilityConditionOther(),
+                "Other Disability Condition is not matching");
+        assertEquals(1, answers.getDisabilityConditions().intValue(),
+                "Disability Conditions is not matching");
+        assertEquals(0, answers.getDisabilityDexterity().intValue(),
+                "Disability Dexterity is not matching");
+        assertEquals(2, answers.getDisabilityHearing().intValue(),
+                "Disability Hearing is not matching");
+        assertEquals(1, answers.getDisabilityImpact().intValue(),
+                "Disability Impact is not matching");
+        assertEquals(2, answers.getDisabilityLearning().intValue(),
+                "Disability Learning is not matching");
+        assertEquals(0, answers.getDisabilityMemory().intValue(),
+                "Disability Memory is not matching");
+        assertEquals(3, answers.getDisabilityMentalHealth().intValue(),
+                "Disability Mental Health is not matching");
+        assertEquals(1, answers.getDisabilityMobility().intValue(),
+                "Disability Mobility is not matching");
+        assertEquals(2, answers.getDisabilityNone().intValue(),
+                "Disability None is not matching");
+        assertEquals(0, answers.getDisabilityOther().intValue(),
+                "Disability Other is not matching");
+        assertEquals(2, answers.getDisabilitySocial().intValue(),
+                "Disability Social is not matching");
+        assertEquals(1, answers.getDisabilityStamina().intValue(),
+                "Disability Stamina is not matching");
+        assertEquals(0, answers.getDisabilityVision().intValue(),
+                "Disability Vision is not matching");
+        assertEquals("01-01-1900", answers.getDob(),
+                "Dob is not matching");
+        assertEquals(1, answers.getDobProvided().intValue(),
+                "Dob Provided is not matching");
+        assertEquals(1, answers.getEnglishLanguageLevel().intValue(),
+                "English Language level is not matching");
+        assertEquals(2, answers.getEthnicity().intValue(),
+                "Ethnicity is not matching");
+        assertEquals("OK", answers.getEthnicityOther(),
+                "Ethnicity Other is not matching");
+        assertEquals(2, answers.getGenderDifferent().intValue(),
+                "Gender Different is not matching");
+        assertEquals("OtherG", answers.getGenderOther(),
+                "Gender Other is not matching");
+        assertEquals(1, answers.getLanguageMain().intValue(),
+                "Main Language is not matching");
+        assertEquals("Lang1", answers.getLanguageOther(),
+                "Language other is not matching");
+        assertEquals(1, answers.getMarriage().intValue(),
+                "Marriage is not matching");
+        assertEquals(2, answers.getPregnancy().intValue(),
+                "Pregnancy is not matching");
+        assertEquals(1, answers.getReligion().intValue(),
+                "Religion is not matching");
+        assertEquals("CDS", answers.getReligionOther(),
+                "Religion Other is not matching");
+        assertEquals(2, answers.getSex().intValue(),
+                "Sex is not matching");
+        assertEquals(4, answers.getSexuality().intValue(),
+                "Sexuality is not matching");
+        assertEquals("Other", answers.getSexualityOther(),
+                "Sexuality Other is not matching");
+        assertEquals(false, answers.getOptOut(),
+                "OptOut is not matching");
     }
 }

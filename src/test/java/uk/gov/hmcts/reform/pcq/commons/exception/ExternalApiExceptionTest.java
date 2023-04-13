@@ -1,8 +1,8 @@
 package uk.gov.hmcts.reform.pcq.commons.exception;
 
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 public class ExternalApiExceptionTest {
@@ -11,7 +11,7 @@ public class ExternalApiExceptionTest {
     public void externalApiExceptionTest() {
         ExternalApiException externalApiException = new ExternalApiException(BAD_REQUEST, "BAD REQUEST");
 
-        assertEquals("Not expected status", "400 BAD_REQUEST", externalApiException.getHttpStatus().toString());
-        assertEquals("Not expected message", "BAD REQUEST", externalApiException.getErrorMessage());
+        assertEquals("400 BAD_REQUEST", externalApiException.getHttpStatus().toString(),"Not expected status");
+        assertEquals("BAD REQUEST", externalApiException.getErrorMessage(),"Not expected message");
     }
 }

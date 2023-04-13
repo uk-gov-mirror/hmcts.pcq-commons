@@ -1,8 +1,7 @@
 package uk.gov.hmcts.reform.pcq.commons.model;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SubmitResponseTest {
 
@@ -17,8 +16,8 @@ public class SubmitResponseTest {
         submitResponse.setResponseStatus(STATUS);
         submitResponse.setResponseStatusCode(STATUS_CODE);
 
-        assertEquals("PCQ Ids don't match", PCQ_ID, submitResponse.getPcqId());
-        assertEquals("Response status doesn't match", STATUS, submitResponse.getResponseStatus());
-        assertEquals("Response status code doesn't match", STATUS_CODE, submitResponse.getResponseStatusCode());
+        assertEquals(PCQ_ID, submitResponse.getPcqId(),"PCQ Ids don't match");
+        assertEquals(STATUS, submitResponse.getResponseStatus(),"Response status doesn't match");
+        assertEquals(STATUS_CODE, submitResponse.getResponseStatusCode(),"Response status code doesn't match");
     }
 }
