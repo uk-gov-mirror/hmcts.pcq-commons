@@ -113,7 +113,7 @@ checkstyle {
 
 def versions = [
         jupiter           : '5.9.1',
-        lombok            : '1.18.24',
+        lombok            : '1.18.26',
         springfoxSwagger  : '3.0.0',
         springBoot        : '2.3.12.RELEASE'
 ]
