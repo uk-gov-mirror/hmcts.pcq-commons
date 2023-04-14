@@ -3,7 +3,7 @@ package uk.gov.hmcts.reform.pcq.commons.utils;
 import feign.Request;
 import feign.Response;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 import uk.gov.hmcts.reform.pcq.commons.model.PcqAnswerResponse;
@@ -20,9 +20,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -160,15 +161,19 @@ public class JsonFeignResponseUtilTest {
         assertThat(entity.getHeaders()).isNotEmpty();
         PcqAnswerResponse[] pcqAnswerResponses = ((PcqRecordWithoutCaseResponse) entity.getBody()).getPcqRecord();
         for (PcqAnswerResponse pcqAnswerResponse : pcqAnswerResponses) {
-            assertTrue("", "d1bc52bc-b673-46d3-a0d8-052ef678772e".equals(pcqAnswerResponse.getPcqId())
-                    || "27f29282-6ff5-4a06-9277-fea8058a07a9".equals(pcqAnswerResponse.getPcqId()));
+            assertTrue(pcqAnswerResponse.getPcqId().equals("d1bc52bc-b673-46d3-a0d8-052ef678772e")
+                            || pcqAnswerResponse.getPcqId().equals("27f29282-6ff5-4a06-9277-fea8058a07a9"),
+                    "Unexpected value for pcqAnswerResponse.getPcqId(): " + pcqAnswerResponse.getPcqId());
+
+
+
         }
     }
 
     @Test
     public void privateConstructorTest() throws Exception {
         Constructor<JsonFeignResponseUtil> constructor = JsonFeignResponseUtil.class.getDeclaredConstructor();
-        assertFalse("Constructor is not accessible", constructor.canAccess(null));
+        assertFalse(constructor.canAccess(null),"Constructor is not accessible");
         constructor.setAccessible(true);
         constructor.newInstance((Object[]) null);
     }

@@ -2,8 +2,8 @@ package uk.gov.hmcts.reform.pcq.commons.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class PcqAnswerResponseTest {
 
@@ -28,14 +28,14 @@ class PcqAnswerResponseTest {
         answerResponse.setVersionNo(VERSION_NO);
         answerResponse.setPcqAnswers(null);
 
-        assertEquals("Actor is not matching", ACTOR, answerResponse.getActor());
-        assertEquals("Service is not matching", SERVICE_ID, answerResponse.getServiceId());
-        assertEquals("PCQ ID is not matching", PCQ_ID, answerResponse.getPcqId());
-        assertEquals("Case ID is not matching", CASE_ID, answerResponse.getCaseId());
-        assertEquals("Channel is not matching", CHANNEL, answerResponse.getChannel());
-        assertNull("Completed Date is not matching", answerResponse.getCompletedDate());
-        assertEquals("Party is not matching", PARTY_ID, answerResponse.getPartyId());
-        assertEquals("Version is not matching", VERSION_NO, answerResponse.getVersionNo());
-        assertNull("Pcq Answer is not matching", answerResponse.getPcqAnswers());
+        assertEquals(ACTOR, answerResponse.getActor(),"Actor is not matching");
+        assertEquals(SERVICE_ID, answerResponse.getServiceId(),"Service is not matching");
+        assertEquals(PCQ_ID, answerResponse.getPcqId(),"PCQ ID is not matching");
+        assertEquals(CASE_ID, answerResponse.getCaseId(),"Case ID is not matching");
+        assertEquals(CHANNEL, answerResponse.getChannel(),"Channel is not matching");
+        assertNull(answerResponse.getCompletedDate(),"Completed Date is not null");
+        assertEquals(PARTY_ID, answerResponse.getPartyId(),"Party is not matching");
+        assertEquals(VERSION_NO, answerResponse.getVersionNo(),"Version is not matching");
+        assertNull(answerResponse.getPcqAnswers(),"Pcq Answer is not null");
     }
 }

@@ -2,8 +2,8 @@ package uk.gov.hmcts.reform.pcq.commons.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PcqWithoutCaseResponseTest {
 
@@ -19,9 +19,9 @@ class PcqWithoutCaseResponseTest {
         pcqWithoutCaseResponse.setResponseStatus(STATUS);
         pcqWithoutCaseResponse.setResponseStatusCode(STATUS_CODE);
 
-        assertArrayEquals("PCQ Ids don't match", pcqIds, pcqWithoutCaseResponse.getPcqId());
-        assertEquals("Response status doesn't match", STATUS, pcqWithoutCaseResponse.getResponseStatus());
-        assertEquals("Response status code doesn't match", STATUS_CODE, pcqWithoutCaseResponse.getResponseStatusCode());
+        assertArrayEquals(pcqIds, pcqWithoutCaseResponse.getPcqId(),"PCQ Ids don't match");
+        assertEquals(STATUS, pcqWithoutCaseResponse.getResponseStatus(),"Response status doesn't match");
+        assertEquals(STATUS_CODE, pcqWithoutCaseResponse.getResponseStatusCode(),"Response status code doesn't match");
     }
 
     @Test
@@ -29,6 +29,6 @@ class PcqWithoutCaseResponseTest {
         PcqWithoutCaseResponse pcqWithoutCaseResponse = new PcqWithoutCaseResponse();
         pcqWithoutCaseResponse.setPcqId(null);
 
-        assertArrayEquals("PCQ Ids don't match", EMPTY_PCQID_ARRAY, pcqWithoutCaseResponse.getPcqId());
+        assertArrayEquals(EMPTY_PCQID_ARRAY, pcqWithoutCaseResponse.getPcqId(),"PCQ Ids don't match");
     }
 }

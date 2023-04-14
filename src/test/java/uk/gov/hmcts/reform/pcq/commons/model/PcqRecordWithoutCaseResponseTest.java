@@ -2,7 +2,7 @@ package uk.gov.hmcts.reform.pcq.commons.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PcqRecordWithoutCaseResponseTest {
     private static final String STATUS = "Success";
@@ -20,19 +20,20 @@ class PcqRecordWithoutCaseResponseTest {
         pcqRecordWithoutCaseResponse.setResponseStatusCode(STATUS_CODE);
 
         assertPcqRecordsEqual(answerResponses, pcqRecordWithoutCaseResponse.getPcqRecord());
-        assertEquals("Response status doesn't match", STATUS, pcqRecordWithoutCaseResponse.getResponseStatus());
-        assertEquals("Response status code doesn't match", STATUS_CODE,
-                pcqRecordWithoutCaseResponse.getResponseStatusCode());
+        assertEquals(STATUS, pcqRecordWithoutCaseResponse.getResponseStatus(),
+                "Response status doesn't match");
+        assertEquals(STATUS_CODE, pcqRecordWithoutCaseResponse.getResponseStatusCode(),
+                "Response status code doesn't match");
     }
 
     @SuppressWarnings("PMD.UseVarargs")
     private void assertPcqRecordsEqual(PcqAnswerResponse[] originalAnswers, PcqAnswerResponse[] responseAnswers) {
-        assertEquals("Pcq Answers Array Length don't match", originalAnswers.length, responseAnswers.length);
+        assertEquals(originalAnswers.length, responseAnswers.length,"Pcq Answers Array Length don't match");
         for (int i = 0; i < originalAnswers.length; i++) {
-            assertEquals("PCQ Ids don't match", originalAnswers[i].getPcqId(), responseAnswers[i].getPcqId());
-            assertEquals("Service Ids don't match", originalAnswers[i].getServiceId(),
-                    responseAnswers[i].getServiceId());
-            assertEquals("Actors don't match", originalAnswers[i].getActor(), responseAnswers[i].getActor());
+            assertEquals(originalAnswers[i].getPcqId(), responseAnswers[i].getPcqId(),"PCQ Ids don't match");
+            assertEquals(originalAnswers[i].getServiceId(),
+                    responseAnswers[i].getServiceId(),"Service Ids don't match");
+            assertEquals(originalAnswers[i].getActor(), responseAnswers[i].getActor(),"Actors don't match");
         }
     }
 
