@@ -20,7 +20,7 @@ Repository of common code components for Protected Characteristics Question (PCQ
 
 ### Prerequisites
 
-- [JDK 11](https://www.oracle.com/java)
+- [JDK 17](https://www.oracle.com/java)
 
 ## Usage
 
