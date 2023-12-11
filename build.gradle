@@ -116,7 +116,7 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: versions.springBoot
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '3.1.8'
 
-    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.13.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.14.0'
 
     implementation group: 'io.github.openfeign.form', name: 'feign-form', version: '3.8.0'
     implementation group: 'io.github.openfeign.form', name: 'feign-form-spring', version: '3.8.0'
