@@ -128,7 +128,7 @@ dependencies {
     implementation group: "io.jsonwebtoken", name: "jjwt", version: "0.9.1"
     
     implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
-    implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '4.0.4'
+    implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '4.0.5'
 
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.jupiter
     testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springBoot
