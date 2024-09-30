@@ -112,16 +112,6 @@ def versions = [
         springBoot        : '3.3.4'
 ]
 
-ext.libraries = [
-        junit5: [
-                "org.junit.jupiter:junit-jupiter-api:${versions.junit}",
-                "org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
-                "org.junit.jupiter:junit-jupiter-params:${versions.junit}",
-                "org.junit.platform:junit-platform-commons:${versions.junitPlatform}",
-                "org.junit.platform:junit-platform-engine:${versions.junitPlatform}"
-        ]
-]
-
 dependencies {
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: versions.jackson
     implementation group: 'io.github.openfeign.form', name: 'feign-form-spring', version: versions.feignForm
@@ -142,7 +132,10 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.13.0'
     testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: versions.mockito
-    testImplementation libraries.junit5
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: versions.junit
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.junit
+    testRuntimeOnly group: 'org.junit.platform', name: 'junit-platform-launcher', version: versions.junitPlatform
+    testRuntimeOnly group: 'org.junit.platform', name: 'junit-platform-commons', version: versions.junitPlatform
 
 }
 
