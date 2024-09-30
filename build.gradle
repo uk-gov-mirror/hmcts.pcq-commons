@@ -107,7 +107,7 @@ def versions = [
         jjwt              : '0.12.6',
         jupiter           : '5.10.2',
         lombok            : '1.18.34',
-        mockito           : '5.13.0',
+        mockito           : '5.14.1',
         springBoot        : '3.3.4'
 ]
 
@@ -128,7 +128,7 @@ dependencies {
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: versions.jjwt
 
     testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springBoot
-    testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.13.0'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.14.1'
     testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
 
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: versions.jupiter
