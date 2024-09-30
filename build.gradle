@@ -105,7 +105,8 @@ def versions = [
         feignForm         : '3.8.0',
         jackson           : '2.17.2',
         jjwt              : '0.12.6',
-        jupiter           : '5.10.2',
+        junit             : '5.11.1',
+        junitPlatform     : '1.11.1',
         lombok            : '1.18.34',
         mockito           : '5.13.0',
         springBoot        : '3.3.4'
@@ -130,12 +131,11 @@ dependencies {
     testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springBoot
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.13.0'
     testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
-
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: versions.jupiter
     testImplementation group: 'org.mockito', name: 'mockito-core', version: versions.mockito
-
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.jupiter
-    testRuntimeOnly group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.10.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: versions.junit
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.junit
+    testRuntimeOnly group: 'org.junit.platform', name: 'junit-platform-launcher', version: versions.junitPlatform
+    testRuntimeOnly group: 'org.junit.platform', name: 'junit-platform-commons', version: versions.junitPlatform
 
 }
 
