@@ -15,9 +15,9 @@ plugins {
 
 def buildNumber = System.getenv("RELEASE_VERSION")?.replace("refs/tags/", "") ?: getCurrentGitBranch()
 
-group 'uk.gov.hmcts.reform.pcq'
+group = 'uk.gov.hmcts.reform.pcq'
 // Do not change this version number
-version buildNumber
+version = buildNumber
 
 java {
     toolchain {
@@ -41,7 +41,7 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven {
-        url 'https://jitpack.io'
+        url = 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1'
     }
 }
 
@@ -87,9 +87,19 @@ publishing {
     publications {
         maven(MavenPublication) {
             from components.java
-            groupId project.group
-            artifactId 'pcq-commons'
-            version project.version
+            groupId = project.group
+            artifactId = 'pcq-commons'
+            version = project.version
+        }
+    }
+    repositories {
+        maven {
+            name = "AzureArtifacts"
+            url = uri("https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1")
+            credentials {
+                username = System.getenv("AZURE_DEVOPS_ARTIFACT_USERNAME")
+                password = System.getenv("AZURE_DEVOPS_ARTIFACT_TOKEN")
+            }
         }
     }
 }
