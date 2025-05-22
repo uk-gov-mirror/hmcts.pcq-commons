@@ -18,9 +18,23 @@ Repository of common code components for Protected Characteristics Question (PCQ
 
 ## Getting started
 
+This library is hosted on Azure DevOps Artifacts and can be used in your project by adding the following to your `build.gradle` file:
+
+```gradle
+repositories {
+    maven {
+        url 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1'
+    }
+}
+
+dependencies {
+  implementation 'com.github.hmcts:pcq-commons:LATEST_TAG'
+}
+```
+
 ### Prerequisites
 
-- [JDK 17](https://www.oracle.com/java)
+- [JDK 21](https://www.oracle.com/java)
 
 ## Usage
 
@@ -29,7 +43,7 @@ Just include the library as your dependency and you will be able to use the mode
 ## Building
 
 The project uses [Gradle](https://gradle.org) as a build tool but you don't have install it locally since there is a
-`./gradlew` wrapper script.  
+`./gradlew` wrapper script.
 
 To build project please execute the following command:
 
@@ -72,8 +86,8 @@ All release versions follow the format MAJOR.MINOR.PATCH and from October 2020 h
 
 ### Applying a version tag
 
-Tags are applied to the branch and then to master. 
-Branch tags should be based off the **current** tag version but with the JIRA appended. 
+Tags are applied to the branch and then to master.
+Branch tags should be based off the **current** tag version but with the JIRA appended.
 
 The JIRA reference will need to be **omitted** and the tag version **updated** when applying the tag to **master**.
 
@@ -85,8 +99,8 @@ If master is not tagged, a release will not be created and therefore will be una
 
 #### Updating branch tag
 
-Follow the steps below to tag a branch once the code review has completed. 
-- Ensure build is successful: 
+Follow the steps below to tag a branch once the code review has completed.
+- Ensure build is successful:
     - ./gradlew clean build
 - Create the tag in git with the new version and JIRA reference.
     - git tag -a 1.0.0.PCQ-1234-UpdateReadme -m "Update to README.md file."
@@ -95,14 +109,13 @@ Follow the steps below to tag a branch once the code review has completed.
 
 #### Updating master tag
 
-Perform the necessary validation steps to merge the code to master. Ensure the branch build succeeds, tagging in git though shows up as errors in travis-ci.
-https://travis-ci.org/hmcts/pcq-commons/
+Perform the necessary validation steps to merge the code to master. Ensure the branch build succeeds.
 
-Once the JIRA has been merged follow the steps below to tag master. 
+Once the JIRA has been merged follow the steps below to tag master.
 - Locally get latest of master.
     - git checkout master
     - git pull
-- Ensure build is successful: 
+- Ensure build is successful:
     - ./gradlew clean build
 - Create the tag in git with the updated version:
     - git tag -a 1.0.1 -m "Update to README.md file."
@@ -116,7 +129,7 @@ You can verify the tag is correct in master by viewing the download link at the 
 To revert code to a previous tag you can checkout the tag to a new branch as follows.
 
 ```bash
-    git checkout tags/1.0.0 -b PCQ-1235-Reverting-Back-To-Baseline 
+    git checkout tags/1.0.0 -b PCQ-1235-Reverting-Back-To-Baseline
 ```
 
 ## License
