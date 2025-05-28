@@ -15,7 +15,7 @@ plugins {
 
 def buildNumber = System.getenv("RELEASE_VERSION")?.replace("refs/tags/", "") ?: getCurrentGitBranch()
 
-group 'uk.gov.hmcts.reform.pcq'
+group 'com.github.hmcts'
 // Do not change this version number
 version buildNumber
 
@@ -42,6 +42,9 @@ repositories {
     mavenCentral()
     maven {
         url 'https://jitpack.io'
+    }
+    maven {
+        url 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1'
     }
 }
 
@@ -92,6 +95,16 @@ publishing {
             version project.version
         }
     }
+    repositories {
+        maven {
+            name = "AzureArtifacts"
+            url = uri("https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1")
+            credentials {
+                username = System.getenv("AZURE_DEVOPS_ARTIFACT_USERNAME")
+                password = System.getenv("AZURE_DEVOPS_ARTIFACT_TOKEN")
+            }
+        }
+    }
 }
 
 checkstyle {
@@ -126,7 +139,7 @@ dependencies {
     implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
     implementation group: "io.jsonwebtoken", name: "jjwt", version: "0.9.1"
-    
+
     implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
     implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '4.0.3'
 
